@@ -26,10 +26,10 @@ const Navigation = () => {
             <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
               About
             </a>
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" onClick={() => window.location.href = "/auth"}>
               Sign In
             </Button>
-            <Button size="sm" className="bg-gradient-to-r from-primary to-accent">
+            <Button size="sm" className="bg-gradient-to-r from-primary to-accent" onClick={() => window.location.href = "/auth"}>
               Get Started
             </Button>
           </div>
@@ -43,7 +43,7 @@ const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+          {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden py-4 space-y-4 border-t">
             <a href="#features" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
@@ -56,10 +56,10 @@ const Navigation = () => {
               About
             </a>
             <div className="flex flex-col gap-2 pt-2">
-              <Button variant="ghost" size="sm" className="w-full">
+              <Button variant="ghost" size="sm" className="w-full" onClick={() => window.location.href = "/auth"}>
                 Sign In
               </Button>
-              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-accent">
+              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-accent" onClick={() => window.location.href = "/auth"}>
                 Get Started
               </Button>
             </div>

@@ -41,6 +41,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="group text-base px-8 h-12 bg-gradient-to-r from-primary to-accent hover:shadow-[0_0_30px_rgba(79,209,197,0.4)] transition-all duration-300"
+              onClick={() => window.location.href = "/auth"}
             >
               Start Free Trial
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
