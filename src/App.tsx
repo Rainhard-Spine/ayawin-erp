@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import Inventory from "./pages/dashboard/Inventory";
+import Sales from "./pages/dashboard/Sales";
+import Finance from "./pages/dashboard/Finance";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -34,6 +36,22 @@ const App = () => (
             element={
               <ProtectedRoute>
                 <Inventory />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard/sales"
+            element={
+              <ProtectedRoute>
+                <Sales />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard/finance"
+            element={
+              <ProtectedRoute>
+                <Finance />
               </ProtectedRoute>
             }
           />
