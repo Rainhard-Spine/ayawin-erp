@@ -10,6 +10,7 @@ import Inventory from "./pages/dashboard/Inventory";
 import Sales from "./pages/dashboard/Sales";
 import Finance from "./pages/dashboard/Finance";
 import HR from "./pages/dashboard/HR";
+import Analytics from "./pages/dashboard/Analytics";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -61,6 +62,14 @@ const App = () => (
             element={
               <ProtectedRoute>
                 <HR />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard/analytics"
+            element={
+              <ProtectedRoute>
+                <Analytics />
               </ProtectedRoute>
             }
           />
