@@ -11,6 +11,7 @@ import Sales from "./pages/dashboard/Sales";
 import Finance from "./pages/dashboard/Finance";
 import HR from "./pages/dashboard/HR";
 import Analytics from "./pages/dashboard/Analytics";
+import Settings from "./pages/dashboard/Settings";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -70,6 +71,14 @@ const App = () => (
             element={
               <ProtectedRoute>
                 <Analytics />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard/settings"
+            element={
+              <ProtectedRoute>
+                <Settings />
               </ProtectedRoute>
             }
           />
