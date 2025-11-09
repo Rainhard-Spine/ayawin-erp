@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { LogOut, User, Building2 } from "lucide-react";
 import ayawinLogo from "@/assets/ayawin-logo.jpg";
 import { useEffect, useState } from "react";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
 
 export function DashboardHeader() {
   const [userName, setUserName] = useState("");
@@ -65,7 +66,9 @@ export function DashboardHeader() {
           <img src={ayawinLogo} alt="Ayawin" className="h-10 object-contain" />
         </div>
 
-        <DropdownMenu>
+        <div className="flex items-center gap-2">
+          <NotificationBell />
+          <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-10 w-10 rounded-full">
               <Avatar className="h-10 w-10">
@@ -98,6 +101,7 @@ export function DashboardHeader() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        </div>
       </div>
     </header>
   );

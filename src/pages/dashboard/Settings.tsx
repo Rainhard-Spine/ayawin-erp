@@ -1,37 +1,46 @@
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { UserManagement } from "@/components/settings/UserManagement";
-import { Users, Building } from "lucide-react";
+import { PermissionsManagement } from "@/components/settings/PermissionsManagement";
+import { CurrencySettings } from "@/components/settings/CurrencySettings";
+import { DataExport } from "@/components/settings/DataExport";
 
 export default function Settings() {
   return (
-    <div className="container mx-auto p-6 space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold mb-2">Settings</h1>
-        <p className="text-muted-foreground">Manage your company settings and team</p>
+    <div className="min-h-screen bg-background">
+      <DashboardHeader />
+      <div className="flex">
+        <DashboardSidebar />
+        <main className="flex-1 p-8">
+          <h1 className="text-3xl font-bold mb-6">Settings</h1>
+          
+          <Tabs defaultValue="users" className="space-y-4">
+            <TabsList>
+              <TabsTrigger value="users">User Management</TabsTrigger>
+              <TabsTrigger value="permissions">Permissions</TabsTrigger>
+              <TabsTrigger value="currency">Currency</TabsTrigger>
+              <TabsTrigger value="export">Data Export</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="users">
+              <UserManagement />
+            </TabsContent>
+
+            <TabsContent value="permissions">
+              <PermissionsManagement />
+            </TabsContent>
+
+            <TabsContent value="currency">
+              <CurrencySettings />
+            </TabsContent>
+
+            <TabsContent value="export">
+              <DataExport />
+            </TabsContent>
+          </Tabs>
+        </main>
       </div>
-
-      <Tabs defaultValue="users" className="space-y-4">
-        <TabsList>
-          <TabsTrigger value="users" className="flex items-center gap-2">
-            <Users className="h-4 w-4" />
-            User Management
-          </TabsTrigger>
-          <TabsTrigger value="company" className="flex items-center gap-2">
-            <Building className="h-4 w-4" />
-            Company Profile
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="users">
-          <UserManagement />
-        </TabsContent>
-
-        <TabsContent value="company">
-          <div className="text-muted-foreground">
-            Company profile settings coming soon...
-          </div>
-        </TabsContent>
-      </Tabs>
     </div>
   );
 }
