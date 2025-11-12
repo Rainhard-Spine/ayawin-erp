@@ -68,6 +68,51 @@ export type Database = {
           },
         ]
       }
+      audit_logs: {
+        Row: {
+          action: string
+          changed_fields: string[] | null
+          company_id: string
+          created_at: string
+          id: string
+          ip_address: string | null
+          new_data: Json | null
+          old_data: Json | null
+          record_id: string | null
+          table_name: string
+          user_agent: string | null
+          user_id: string | null
+        }
+        Insert: {
+          action: string
+          changed_fields?: string[] | null
+          company_id: string
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          new_data?: Json | null
+          old_data?: Json | null
+          record_id?: string | null
+          table_name: string
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          action?: string
+          changed_fields?: string[] | null
+          company_id?: string
+          created_at?: string
+          id?: string
+          ip_address?: string | null
+          new_data?: Json | null
+          old_data?: Json | null
+          record_id?: string | null
+          table_name?: string
+          user_agent?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       communications: {
         Row: {
           company_id: string
@@ -318,6 +363,57 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      email_queue: {
+        Row: {
+          attempts: number
+          body: string
+          company_id: string
+          created_at: string
+          error_message: string | null
+          id: string
+          max_attempts: number
+          scheduled_for: string
+          sent_at: string | null
+          status: string
+          subject: string
+          template_data: Json | null
+          template_name: string | null
+          to_email: string
+        }
+        Insert: {
+          attempts?: number
+          body: string
+          company_id: string
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          max_attempts?: number
+          scheduled_for?: string
+          sent_at?: string | null
+          status?: string
+          subject: string
+          template_data?: Json | null
+          template_name?: string | null
+          to_email: string
+        }
+        Update: {
+          attempts?: number
+          body?: string
+          company_id?: string
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          max_attempts?: number
+          scheduled_for?: string
+          sent_at?: string | null
+          status?: string
+          subject?: string
+          template_data?: Json | null
+          template_name?: string | null
+          to_email?: string
+        }
+        Relationships: []
       }
       employees: {
         Row: {
@@ -780,8 +876,10 @@ export type Database = {
           avatar_url: string | null
           company_id: string | null
           created_at: string | null
+          email_notifications: boolean
           full_name: string | null
           id: string
+          notification_preferences: Json | null
           phone: string | null
           updated_at: string | null
         }
@@ -789,8 +887,10 @@ export type Database = {
           avatar_url?: string | null
           company_id?: string | null
           created_at?: string | null
+          email_notifications?: boolean
           full_name?: string | null
           id: string
+          notification_preferences?: Json | null
           phone?: string | null
           updated_at?: string | null
         }
@@ -798,8 +898,10 @@ export type Database = {
           avatar_url?: string | null
           company_id?: string | null
           created_at?: string | null
+          email_notifications?: boolean
           full_name?: string | null
           id?: string
+          notification_preferences?: Json | null
           phone?: string | null
           updated_at?: string | null
         }
@@ -1055,6 +1157,51 @@ export type Database = {
             referencedColumns: ["code"]
           },
         ]
+      }
+      saved_reports: {
+        Row: {
+          company_id: string
+          created_at: string
+          created_by: string
+          description: string | null
+          filters: Json
+          id: string
+          is_active: boolean
+          last_generated_at: string | null
+          name: string
+          report_type: string
+          schedule: string | null
+          updated_at: string
+        }
+        Insert: {
+          company_id: string
+          created_at?: string
+          created_by: string
+          description?: string | null
+          filters?: Json
+          id?: string
+          is_active?: boolean
+          last_generated_at?: string | null
+          name: string
+          report_type: string
+          schedule?: string | null
+          updated_at?: string
+        }
+        Update: {
+          company_id?: string
+          created_at?: string
+          created_by?: string
+          description?: string | null
+          filters?: Json
+          id?: string
+          is_active?: boolean
+          last_generated_at?: string | null
+          name?: string
+          report_type?: string
+          schedule?: string | null
+          updated_at?: string
+        }
+        Relationships: []
       }
       suppliers: {
         Row: {

@@ -14,6 +14,7 @@ import Analytics from "./pages/dashboard/Analytics";
 import Settings from "./pages/dashboard/Settings";
 import CRM from "./pages/dashboard/CRM";
 import Suppliers from "./pages/dashboard/Suppliers";
+import Reports from "./pages/dashboard/Reports";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -97,6 +98,14 @@ const App = () => (
             element={
               <ProtectedRoute>
                 <Suppliers />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dashboard/reports"
+            element={
+              <ProtectedRoute>
+                <Reports />
               </ProtectedRoute>
             }
           />

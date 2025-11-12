@@ -32,6 +32,7 @@ const menuItems = [
   { title: "Suppliers", url: "/dashboard/suppliers", icon: Package },
   { title: "HR & Attendance", url: "/dashboard/hr", icon: Clock },
   { title: "Analytics", url: "/dashboard/analytics", icon: BarChart3 },
+  { title: "Reports & Audit", url: "/dashboard/reports", icon: FileText },
   { title: "Settings", url: "/dashboard/settings", icon: Settings },
 ];
 

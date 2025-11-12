@@ -38,41 +38,20 @@ const AuthForm = () => {
     setLoading(true);
 
     try {
-      // First create the company
-      const { data: companyData, error: companyError } = await supabase
-        .from('companies')
-        .insert({
-          name: signupData.companyName,
-        })
-        .select()
-        .single();
-
-      if (companyError) {
-        throw companyError;
-      }
-
-      // Then create the user with company_id in metadata
-      const { data, error } = await supabase.auth.signUp({
+      // Sign up user - company creation is handled by trigger
+      const { error } = await supabase.auth.signUp({
         email: signupData.email,
         password: signupData.password,
         options: {
           data: {
             full_name: signupData.fullName,
-            company_id: companyData.id,
+            company_name: signupData.companyName,
           },
           emailRedirectTo: `${window.location.origin}/dashboard`,
         },
       });
 
       if (error) throw error;
-
-      if (data.user) {
-        // Assign company_admin role
-        await supabase.from('user_roles').insert({
-          user_id: data.user.id,
-          role: 'company_admin'
-        });
-      }
 
       toast.success("Account created! Redirecting to dashboard...");
       window.location.href = "/dashboard";
