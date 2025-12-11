@@ -222,7 +222,8 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Phone</p>
-                      <p className="font-medium">+254 700 123 456</p>
+                      <p className="font-medium">+254 791 259 510</p>
+                      <p className="font-medium">+254 745 617 108</p>
                     </div>
                   </div>
                   
@@ -232,7 +233,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="font-medium">info@ayawin.com</p>
+                      <p className="font-medium">ayawin.ke@gmail.com</p>
                     </div>
                   </div>
                   
@@ -282,7 +283,7 @@ const ContactSection = () => {
               <Button 
                 variant="outline" 
                 className="flex-1 h-12"
-                onClick={() => window.open("tel:+254700123456")}
+                onClick={() => window.open("tel:+254791259510")}
               >
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now
@@ -290,7 +291,7 @@ const ContactSection = () => {
               <Button 
                 variant="outline" 
                 className="flex-1 h-12"
-                onClick={() => window.open("mailto:info@ayawin.com")}
+                onClick={() => window.open("mailto:ayawin.ke@gmail.com")}
               >
                 <Mail className="h-4 w-4 mr-2" />
                 Email Us

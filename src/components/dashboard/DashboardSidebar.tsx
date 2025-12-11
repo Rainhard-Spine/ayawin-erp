@@ -43,25 +43,29 @@ export function DashboardSidebar() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <Sidebar collapsible="icon">
-      <SidebarContent>
+    <Sidebar collapsible="icon" className="border-r border-sidebar-border">
+      <SidebarContent className="bg-sidebar">
         <SidebarGroup>
-          <SidebarGroupLabel>Main Menu</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-sidebar-foreground/70 font-semibold">
+            Main Menu
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton asChild tooltip={item.title}>
                     <NavLink
                       to={item.url}
                       className={({ isActive }) =>
-                        isActive
-                          ? "bg-primary text-primary-foreground font-medium"
-                          : "hover:bg-muted/50"
+                        `flex items-center gap-3 rounded-md px-3 py-2 transition-colors ${
+                          isActive
+                            ? "bg-primary text-primary-foreground font-medium"
+                            : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                        }`
                       }
                     >
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                      <item.icon className="h-5 w-5 flex-shrink-0" />
+                      <span className="truncate">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
