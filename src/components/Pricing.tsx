@@ -112,8 +112,15 @@ const Pricing = () => {
                       : ""
                   }`}
                   variant={plan.popular ? "default" : "outline"}
+                  onClick={() => {
+                    if (plan.price === "Custom") {
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      window.location.href = "/auth";
+                    }
+                  }}
                 >
-                  {plan.price === "Custom" ? "Contact Sales" : "Start Free Trial"}
+                  {plan.price === "Custom" ? "Contact Ayawin" : "Try Demo"}
                 </Button>
               </CardFooter>
             </Card>
