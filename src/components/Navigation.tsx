@@ -20,11 +20,14 @@ const Navigation = () => {
             <a href="#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
             </a>
+            <a href="#demo" className="text-sm font-medium hover:text-primary transition-colors">
+              Demo
+            </a>
             <a href="#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </a>
-            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
-              About
+            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+              Contact
             </a>
             <Button variant="ghost" size="sm" onClick={() => window.location.href = "/auth"}>
               Sign In
@@ -49,11 +52,14 @@ const Navigation = () => {
             <a href="#features" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
               Features
             </a>
+            <a href="#demo" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+              Demo
+            </a>
             <a href="#pricing" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </a>
-            <a href="#about" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
-              About
+            <a href="#contact" className="block py-2 text-sm font-medium hover:text-primary transition-colors">
+              Contact
             </a>
             <div className="flex flex-col gap-2 pt-2">
               <Button variant="ghost" size="sm" className="w-full" onClick={() => window.location.href = "/auth"}>
