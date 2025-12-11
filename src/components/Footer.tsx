@@ -58,11 +58,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-accent-foreground/80">
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+254 700 123 456</span>
+                <span>+254 791 259 510 / +254 745 617 108</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>info@ayawin.com</span>
+                <span>ayawin.ke@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5" />
